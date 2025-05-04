@@ -1,0 +1,13 @@
+D:\Code\Tyre-Degradation-Calculator\Degradation_Calculator\Degradation_Calculator\obj\Debug\Degradation_Calculator.csproj.AssemblyReference.cache
+D:\Code\Tyre-Degradation-Calculator\Degradation_Calculator\Degradation_Calculator\obj\Debug\Degradation_Calculator.Form1.resources
+D:\Code\Tyre-Degradation-Calculator\Degradation_Calculator\Degradation_Calculator\obj\Debug\Degradation_Calculator.csproj.GenerateResource.cache
+D:\Code\Tyre-Degradation-Calculator\Degradation_Calculator\Degradation_Calculator\obj\Debug\Degradation_Calculator.Properties.Resources.resources
+D:\Code\Tyre-Degradation-Calculator\Degradation_Calculator\Degradation_Calculator\obj\Debug\Degradation_Calculator.csproj.CoreCompileInputs.cache
+D:\Code\Tyre-Degradation-Calculator\Degradation_Calculator\Degradation_Calculator\bin\Debug\Degradation_Calculator.exe.config
+D:\Code\Tyre-Degradation-Calculator\Degradation_Calculator\Degradation_Calculator\bin\Debug\Degradation_Calculator.exe
+D:\Code\Tyre-Degradation-Calculator\Degradation_Calculator\Degradation_Calculator\bin\Debug\Degradation_Calculator.pdb
+D:\Code\Tyre-Degradation-Calculator\Degradation_Calculator\Degradation_Calculator\bin\Debug\Newtonsoft.Json.dll
+D:\Code\Tyre-Degradation-Calculator\Degradation_Calculator\Degradation_Calculator\bin\Debug\Newtonsoft.Json.xml
+D:\Code\Tyre-Degradation-Calculator\Degradation_Calculator\Degradation_Calculator\obj\Debug\Degradat.6F1F69D8.Up2Date
+D:\Code\Tyre-Degradation-Calculator\Degradation_Calculator\Degradation_Calculator\obj\Debug\Degradation_Calculator.exe
+D:\Code\Tyre-Degradation-Calculator\Degradation_Calculator\Degradation_Calculator\obj\Debug\Degradation_Calculator.pdb
