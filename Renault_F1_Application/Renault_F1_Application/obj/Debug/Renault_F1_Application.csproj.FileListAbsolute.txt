@@ -30,3 +30,16 @@ C:\Users\akals\Documents\My Projects\Tyre Degradation Calculator\Renault_F1_Appl
 C:\Users\akals\Documents\My Projects\Tyre Degradation Calculator\Renault_F1_Application\Renault_F1_Application\obj\Debug\Renault_F1_Application.csproj.CopyComplete
 C:\Users\akals\Documents\My Projects\Tyre Degradation Calculator\Renault_F1_Application\Renault_F1_Application\obj\Debug\Renault_F1_Application.exe
 C:\Users\akals\Documents\My Projects\Tyre Degradation Calculator\Renault_F1_Application\Renault_F1_Application\obj\Debug\Renault_F1_Application.pdb
+D:\Code\Tyre-Degradation-Calculator\Renault_F1_Application\Renault_F1_Application\bin\Debug\Renault_F1_Application.exe.config
+D:\Code\Tyre-Degradation-Calculator\Renault_F1_Application\Renault_F1_Application\bin\Debug\Renault_F1_Application.exe
+D:\Code\Tyre-Degradation-Calculator\Renault_F1_Application\Renault_F1_Application\bin\Debug\Renault_F1_Application.pdb
+D:\Code\Tyre-Degradation-Calculator\Renault_F1_Application\Renault_F1_Application\bin\Debug\Newtonsoft.Json.dll
+D:\Code\Tyre-Degradation-Calculator\Renault_F1_Application\Renault_F1_Application\bin\Debug\Newtonsoft.Json.xml
+D:\Code\Tyre-Degradation-Calculator\Renault_F1_Application\Renault_F1_Application\obj\Debug\Renault_F1_Application.csproj.AssemblyReference.cache
+D:\Code\Tyre-Degradation-Calculator\Renault_F1_Application\Renault_F1_Application\obj\Debug\Renault_F1_Application.Form1.resources
+D:\Code\Tyre-Degradation-Calculator\Renault_F1_Application\Renault_F1_Application\obj\Debug\Renault_F1_Application.Properties.Resources.resources
+D:\Code\Tyre-Degradation-Calculator\Renault_F1_Application\Renault_F1_Application\obj\Debug\Renault_F1_Application.csproj.GenerateResource.cache
+D:\Code\Tyre-Degradation-Calculator\Renault_F1_Application\Renault_F1_Application\obj\Debug\Renault_F1_Application.csproj.CoreCompileInputs.cache
+D:\Code\Tyre-Degradation-Calculator\Renault_F1_Application\Renault_F1_Application\obj\Debug\Renault_.ADE3E3F7.Up2Date
+D:\Code\Tyre-Degradation-Calculator\Renault_F1_Application\Renault_F1_Application\obj\Debug\Renault_F1_Application.exe
+D:\Code\Tyre-Degradation-Calculator\Renault_F1_Application\Renault_F1_Application\obj\Debug\Renault_F1_Application.pdb
