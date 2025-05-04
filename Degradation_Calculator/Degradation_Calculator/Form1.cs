@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Windows.Forms;
 using System.Xml;
+using System.IO;
 
 namespace Degradation_Calculator
 {
@@ -34,12 +35,12 @@ namespace Degradation_Calculator
             TempLbl.Text = "Temperature " + "(\u00B0" + "C):";
 
             //Enables or disables combobox selection if no values present in list
-            ComboBoxSelectionControl(FrontLeftBox);  
+            ComboBoxSelectionControl(FrontLeftBox);
             ComboBoxSelectionControl(FrontRightBox);
             ComboBoxSelectionControl(RearLeftBox);
             ComboBoxSelectionControl(RearRightBox);
 
-            if (TrackBox.SelectedItem == null) 
+            if (TrackBox.SelectedItem == null)
             {
                 FrontLeftBox.Enabled = false;
                 TempTBox.Enabled = false;
@@ -50,18 +51,15 @@ namespace Degradation_Calculator
                 TempTBox.Enabled = true;
             }
         }
-        
+
 
 
         //Loads tyres into application
         public void LoadTyre()
         {
-            var tyreXMLFile = Properties.Resources.TyresXML;
+            var tyreXMLFile = FileLoader.LoadXml("TyresXML.xml"); // Loads XML File
 
-            XmlDocument docXml = new XmlDocument();
-            docXml.LoadXml(tyreXMLFile); //Loads XML File
-
-            foreach (XmlNode node in docXml.DocumentElement) //ForEach XML element in document
+            foreach (XmlNode node in tyreXMLFile.DocumentElement) //ForEach XML element in document
             {
                 string name = node["Name"].InnerText; //Collects and stores tyre name 
                 string family = node["Family"].InnerText; //Collects and stores tyre family
@@ -72,7 +70,7 @@ namespace Degradation_Calculator
                 Tyre newTyre = new Tyre(name, family, type, placement, degradationcoefficient); //Creats new tyre object
 
                 TyreList.Add(newTyre); //Adds the new tyre object to tyre list
-             
+
                 FrontLeftBox.Items.Add(newTyre); //Adds the new tyre object to combo box
             }
         }
@@ -82,7 +80,7 @@ namespace Degradation_Calculator
         //Clears result label text
         public void ClearResultText()
         {
-            
+
             FLAvgResult.Text = "";
             FLModeResult.Text = "";
             FLRangeResult.Text = "";
@@ -112,7 +110,7 @@ namespace Degradation_Calculator
             else
             {
                 box.Enabled = true;
-            } 
+            }
         }
 
 
@@ -120,7 +118,7 @@ namespace Degradation_Calculator
         //Loads Tracks into application
         public void LoadTrack()
         {
-            List<string> lines = Properties.Resources.TrackDegradationCoefficients.Split('\n').ToList();
+            var lines = FileLoader.LoadText("TrackDegradationCoefficients.txt").Split('\n').ToList();
 
             foreach (string line in lines)
             {
@@ -139,8 +137,6 @@ namespace Degradation_Calculator
 
         }
 
-
-
         public void FrontLeftBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             tyreCheck(FrontRightBox, RearLeftBox, RearRightBox);
@@ -152,7 +148,7 @@ namespace Degradation_Calculator
             List<Tyre> FilteredTyreListFamily = FilteredTyreListType.Where(t => t.Family == tyreFL.Family).ToList(); // Filters tyre listby family, ensures front tyres are of same family and type
 
             //clears tyres from list allowing addition of new filtered tyres
-            RearLeftBox.Items.Clear(); 
+            RearLeftBox.Items.Clear();
             FrontRightBox.Items.Clear();
             RearRightBox.Items.Clear();
 
@@ -176,12 +172,12 @@ namespace Degradation_Calculator
                 MessageBox.Show("Track Must Be Selected, Please Select a Track", "Track Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Error); //Track selection error message
             }
 
-           
+
 
             //Enables combobox selection as filtered tyres added to combobox 
             ComboBoxSelectionControl(FrontRightBox);
             ComboBoxSelectionControl(RearLeftBox);
-    
+
         }
 
         private void FrontRightBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -254,7 +250,7 @@ namespace Degradation_Calculator
             foreach (string D in DegPoints)
             {
                 int ConvertedPoint = Convert.ToInt32(D); //Converts string values in list<string> to int
-                
+
                 TrackDegPoints.Add(ConvertedPoint); //Adds converted deg point to TrackDegPoints list<int>
             }
 
@@ -333,7 +329,7 @@ namespace Degradation_Calculator
                     if (geocodeResults.Any())
                     {
                         var geocodeResult = geocodeResults.First();
-                        return Tuple.Create(geocodeResult.latitude, geocodeResult.longitude);      
+                        return Tuple.Create(geocodeResult.latitude, geocodeResult.longitude);
                     }
                     else
                     {
@@ -357,9 +353,9 @@ namespace Degradation_Calculator
             double tyreDegCoe = x.DegradationCoefficient;
 
             //Check type of tyre and applies percentage to tyre degregation coefficient 
-            if (tyreType == "SuperSoft" || tyreType == "Soft") 
+            if (tyreType == "SuperSoft" || tyreType == "Soft")
             {
-                tyreDegCoe = tyreDegCoe-(tyreDegCoe * 0.8);
+                tyreDegCoe = tyreDegCoe - (tyreDegCoe * 0.8);
             }
             else if (tyreType == "Medium")
             {
@@ -373,7 +369,7 @@ namespace Degradation_Calculator
             //Calculates point tyre degregation for all degregation points on a track and adds results to DegResults list
             foreach (double degPoint in TrackDegPoints)
             {
-                int DegResult = Convert.ToInt32( (degPoint * TrackTemp) / tyreDegCoe);
+                int DegResult = Convert.ToInt32((degPoint * TrackTemp) / tyreDegCoe);
                 DegResults.Add(DegResult);
             }
         }
@@ -395,7 +391,7 @@ namespace Degradation_Calculator
         //Calculates mode of DegResults list 
         public void ModeCalc(Label modelbl)
         {
-            int ResultsMode = DegResults.GroupBy(i => i).OrderByDescending(grp => grp.Count()).Select(grp => grp.Key).First(); 
+            int ResultsMode = DegResults.GroupBy(i => i).OrderByDescending(grp => grp.Count()).Select(grp => grp.Key).First();
 
             modelbl.Text = ResultsMode.ToString();
 
@@ -411,7 +407,7 @@ namespace Degradation_Calculator
             int ResultsMin = DegResults.Min();
 
             int ResultsRange = ResultsMax - ResultsMin;
-            
+
             rangelbl.Text = ResultsRange.ToString();
 
             ColourLegend(ResultsRange, rangelbl);
@@ -426,7 +422,7 @@ namespace Degradation_Calculator
 
             CalculateDeg(tyre, SelectedTrack);
 
-            AverageCalc(averageLbl); 
+            AverageCalc(averageLbl);
             RangeCalc(rangeLbl);
             ModeCalc(modeLbl);
         }
@@ -434,7 +430,7 @@ namespace Degradation_Calculator
 
 
         //Colour legend for result average, mode and range values
-        public void ColourLegend(int results,Label resultsLbl)
+        public void ColourLegend(int results, Label resultsLbl)
         {
             if (results <= 999)
             {
@@ -493,7 +489,7 @@ namespace Degradation_Calculator
         //Checks tyre selection ensuring they are valid
         public void tyreCheck(ComboBox tyreBox1, ComboBox tyreBox2, ComboBox tyreBox3)
         {
-            Tyre FLTyre = (Tyre) FrontLeftBox.SelectedItem;
+            Tyre FLTyre = (Tyre)FrontLeftBox.SelectedItem;
             Tyre T1 = (Tyre)tyreBox1.SelectedItem;
             Tyre T2 = (Tyre)tyreBox2.SelectedItem;
             Tyre T3 = (Tyre)tyreBox3.SelectedItem;

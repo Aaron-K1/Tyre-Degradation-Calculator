@@ -59,43 +59,5 @@ namespace Degradation_Calculator.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Silverstone|Towcester|14,57,79,85,18,67,84,8,1,66,37,7,24,14,60,6,75,5,45,83,18,57,58,18,33,46,73,10,62,74,75,79,70,73,59,99,8,52,93,58,52,72,93,73,75,59,66,33,38,54,41,21,67,10,12,57,99,61,52,72,93,73,46,26,91,58,36,50,55,60,97,23,12,86,30,45,63,85,43,73,80,40,71,7,32,54,11,60,60,1,99,47,0,20,65,78,26,66,82,17,22,15,78,78,57,18,8,80,79,67,93,14,18,78,92,52,1,39,93,36,46,76,89,53,60,50,23,91,21,51,19,96,2,26,50,64,62,93,50,14,46,31,80,93,8,85,29,21,28,12,76,87,72,45,70,46,25,24,17,6,94,17,58,27,47,96,11,92, [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string TrackDegradationCoefficients {
-            get {
-                return ResourceManager.GetString("TrackDegradationCoefficients", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;Tyres&gt;
-        ///&lt;Tyre&gt;
-        ///&lt;Name&gt;SuperSoft - Front Tyre 1&lt;/Name&gt;
-        ///&lt;Family&gt;F1&lt;/Family&gt;
-        ///&lt;Type&gt;SuperSoft&lt;/Type&gt;
-        ///&lt;Placement&gt;FL&lt;/Placement&gt;
-        ///&lt;DegradationCoefficient&gt;10&lt;/DegradationCoefficient&gt;
-        ///&lt;/Tyre&gt;
-        ///&lt;Tyre&gt;
-        ///&lt;Name&gt;SuperSoft - Front Tyre 2&lt;/Name&gt;
-        ///&lt;Family&gt;F2&lt;/Family&gt;
-        ///&lt;Type&gt;SuperSoft&lt;/Type&gt;
-        ///&lt;Placement&gt;FL&lt;/Placement&gt;
-        ///&lt;DegradationCoefficient&gt;15&lt;/DegradationCoefficient&gt;
-        ///&lt;/Tyre&gt;
-        ///&lt;Tyre&gt;
-        ///&lt;Name&gt;SuperSoft - Front Tyre 3&lt;/Name&gt;
-        ///&lt;Family&gt;F1&lt;/Family&gt;
-        ///&lt;Type&gt;SuperSoft&lt;/Type&gt;
-        ///&lt;Placement&gt;FR&lt;/Placement&gt;
-        ///&lt;DegradationCoefficien [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string TyresXML {
-            get {
-                return ResourceManager.GetString("TyresXML", resourceCulture);
-            }
-        }
     }
 }
