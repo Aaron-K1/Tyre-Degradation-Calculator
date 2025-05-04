@@ -1,15 +1,11 @@
 ﻿using Newtonsoft.Json;
+using Renault_F1_Application.Types.OpenWeather;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Net;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -17,6 +13,7 @@ namespace Renault_F1_Application
 {
     public partial class Form1 : Form
     {
+        private const string OPENWEATHERAPPID = "";
         List<Tyre> TyreList = new List<Tyre>();
         List<Tyre> FilteredTyreListType = new List<Tyre>();
         List<Track> TrackList = new List<Track>();
@@ -187,8 +184,6 @@ namespace Renault_F1_Application
     
         }
 
-
-
         private void FrontRightBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Tyre tyreFR = (Tyre)FrontRightBox.SelectedItem; //Casts selected item to tyre type 
@@ -263,7 +258,7 @@ namespace Renault_F1_Application
                 TrackDegPoints.Add(ConvertedPoint); //Adds converted deg point to TrackDegPoints list<int>
             }
 
-            getWeather(); //Track Temp API call made
+            GetWeather(SelectedTrack.Location); //Track Temp API call made
 
             //Re-Performs calculations if track is changed
             if (TrackTemp != 0.0 && FrontLeftBox.SelectedItem != null && FrontRightBox.SelectedItem != null && RearLeftBox.SelectedItem != null && RearRightBox.SelectedItem != null)
@@ -304,28 +299,55 @@ namespace Renault_F1_Application
 
 
         //Makes Track Tempreture Web Service (API) call. 
-        public void getWeather()
+        public void GetWeather(string location)
         {
-            string APPID = "ea5702b90501aaf5f76e7cd3172089ba"; //API Key
-            string City = SelectedTrack.Location; // Location of selected track used within URL of API Call
+            var latLong = ConvertTrackLocationLongAndLat(location);
 
             using (WebClient web = new WebClient())
             {
-                string url = string.Format("http://api.openweathermap.org/data/2.5/find?q={0}&units=metric&APPID={1}&type=accurate", City, APPID);
+                string url = $"https://api.openweathermap.org/data/2.5/weather?lat={latLong.Item1}&lon={latLong.Item2}&appid={OPENWEATHERAPPID}";
 
                 var json = web.DownloadString(url);
 
-                var jsonResult = JsonConvert.DeserializeObject<WeatherInfo.Root>(json);
+                var getCurrentWeatherResponse = JsonConvert.DeserializeObject<GetCurrentWeatherResponse>(json);
 
-                WeatherInfo.Root outPut = jsonResult;
-
-                TempTBox.Text = outPut.list.First().main.temp.ToString();
-                TrackTemp = Convert.ToDouble(TempTBox.Text.ToString());
+                var tempreture = getCurrentWeatherResponse.Main.Temp;
+                TempTBox.Text = tempreture.ToString();
+                TrackTemp = tempreture;
             }
 
         }
 
+        public Tuple<double, double> ConvertTrackLocationLongAndLat(string location)
+        {
+            using (WebClient web = new WebClient())
+            {
+                try
+                {
+                    var url = $"http://api.openweathermap.org/geo/1.0/direct?q={location}&limit=1&appid={OPENWEATHERAPPID}";
 
+                    var json = web.DownloadString(url);
+
+                    var geocodeResults = JsonConvert.DeserializeObject<List<GeocodeResult>>(json);
+
+                    if (geocodeResults.Any())
+                    {
+                        var geocodeResult = geocodeResults.First();
+                        return Tuple.Create(geocodeResult.latitude, geocodeResult.longitude);      
+                    }
+                    else
+                    {
+                        MessageBox.Show("No results found for the specified location.", "Geocoding Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return Tuple.Create(0.0, 0.0);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred while fetching geocoding data: {ex.Message}", "Geocoding Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return Tuple.Create(0.0, 0.0);
+                }
+            }
+        }
 
         //Calculates tyre point degragation and stores result within DegResults List
         public void CalculateDeg(Tyre x, Track xs)
