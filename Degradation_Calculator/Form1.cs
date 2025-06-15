@@ -13,11 +13,11 @@ namespace Degradation_Calculator
 {
     public partial class Form1 : Form
     {
-        private const string OPENWEATHERAPPID = "";
+        private const string OPENWEATHERAPPID = "ea5702b90501aaf5f76e7cd3172089ba";
         List<Tyre> Tyres = new List<Tyre>();
         List<Tyre> FilteredTyreListType = new List<Tyre>();
         List<Track> Tracks = new List<Track>();
-        List<int> DegridationPoints = new List<int>();
+        List<int> TrackDegridationPoints = new List<int>();
         List<int> DegradationResults = new List<int>();
 
         double TrackTemp = 0.0;
@@ -30,8 +30,6 @@ namespace Degradation_Calculator
             LoadTyre();
             LoadTrack();
             ClearResultText();
-
-            TempLbl.Text = "Temperature " + "(\u00B0" + "C):";
 
             //Enables or disables combobox selection if no values present in list
             ComboBoxSelectionControl(FrontLeftBox);
@@ -112,17 +110,13 @@ namespace Degradation_Calculator
         {
             var lines = FileLoader.LoadText("TrackDegradationCoefficients.txt").Split('\n').ToList();
 
-            foreach (string line in lines)
+            foreach (var line in lines)
             {
-                List<string> Tracks = line.Split('|').ToList();
+                var tracks = line.Split('|').ToList();
 
-                string name = Tracks[0];
-                string location = Tracks[1];
-                string degragationpoint = Tracks[2];
+                var track = new Track(tracks[0], tracks[1], tracks[2]);
 
-                var track = new Track(name, location, degragationpoint);
-
-                this.Tracks.Add(track);
+                Tracks.Add(track);
 
                 TrackBox.Items.Add(track);
             }
@@ -133,38 +127,42 @@ namespace Degradation_Calculator
         {
             ValidateTyreSelection();
 
-            Tyre tyreFL = (Tyre)FrontLeftBox.SelectedItem; //Casts selected item to tyre type 
-
-            FilteredTyreListType = Tyres.Where(t => t.Type == tyreFL.Type).ToList(); //Filters tyre list by type, ensuring all tyres are of same type
-
-            List<Tyre> FilteredTyreListFamily = FilteredTyreListType.Where(t => t.Family == tyreFL.Family).ToList(); // Filters tyre listby family, ensures front tyres are of same family and type
-
             //clears tyres from list allowing addition of new filtered tyres
             RearLeftBox.Items.Clear();
             FrontRightBox.Items.Clear();
             RearRightBox.Items.Clear();
 
-            foreach (Tyre t in FilteredTyreListFamily)
+            var frontLeftTyre = (Tyre)FrontLeftBox.SelectedItem; //Casts selected item to tyre type 
+
+            //Filters tyre list by type, ensuring all tyres are of same type
+            FilteredTyreListType = Tyres
+                .Where(t => t.Type == frontLeftTyre.Type)
+                .ToList();
+
+            // Filters tyre listby family, ensures front tyres are of same family and type
+            var filteredTyreListFamily = FilteredTyreListType
+                .Where(t => t.Family == frontLeftTyre.Family)
+                .ToList(); 
+
+
+            foreach (Tyre tyre in filteredTyreListFamily)
             {
-                FrontRightBox.Items.Add(t); // Addds filtered tyres to combo box (dropdown)
+                FrontRightBox.Items.Add(tyre); // Addds filtered tyres to combo box (dropdown)
             }
 
-            foreach (Tyre t in FilteredTyreListType)
+            foreach (Tyre tyre in FilteredTyreListType)
             {
-                RearLeftBox.Items.Add(t); // Addds filtered tyres to combo box (dropdown)
-
+                RearLeftBox.Items.Add(tyre); // Addds filtered tyres to combo box (dropdown)
             }
 
             if (TrackBox.SelectedItem != null)
             {
-                ExecuteCalcs(tyreFL, FLAvgResult, FLRangeResult, FLModeResult); //Executes calculation for front left tyre
+                ExecuteCalcs(frontLeftTyre, FLAvgResult, FLRangeResult, FLModeResult); //Executes calculation for front left tyre
             }
             else
             {
                 MessageBox.Show("Track Must Be Selected, Please Select a Track", "Track Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Error); //Track selection error message
             }
-
-
 
             //Enables combobox selection as filtered tyres added to combobox 
             ComboBoxSelectionControl(FrontRightBox);
@@ -174,11 +172,11 @@ namespace Degradation_Calculator
 
         private void FrontRightBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Tyre tyreFR = (Tyre)FrontRightBox.SelectedItem; //Casts selected item to tyre type 
+            var frontRightTyre = (Tyre)FrontRightBox.SelectedItem; //Casts selected item to tyre type 
 
             if (TrackBox.SelectedItem != null)
             {
-                ExecuteCalcs(tyreFR, FRAverageResult, FRRangeResult, FRModeResult); //Executes calculation for front right tyre
+                ExecuteCalcs(frontRightTyre, FRAverageResult, FRRangeResult, FRModeResult); //Executes calculation for front right tyre
             }
             else
             {
@@ -186,23 +184,23 @@ namespace Degradation_Calculator
             }
         }
 
-
-
         private void RearLeftBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Tyre tyreRL = (Tyre)RearLeftBox.SelectedItem; //Casts selected item to tyre type 
+            var rearLeftTyre = (Tyre)RearLeftBox.SelectedItem; //Casts selected item to tyre type 
 
-            List<Tyre> RightTyreList = FilteredTyreListType.Where(t => t.Family == tyreRL.Family).ToList(); //filters list by family, ensuring back tyres are of same family and type
+            //filters list by family, ensuring back tyres are of same family and type
+            var rightTyreList = FilteredTyreListType
+                .Where(t => t.Family == rearLeftTyre.Family)
+                .ToList(); 
 
-            foreach (Tyre t in RightTyreList)
+            foreach (Tyre t in rightTyreList)
             {
                 RearRightBox.Items.Add(t); // Addds filtered tyres to combo box (dropdown)
             }
 
-
             if (TrackBox.SelectedItem != null)
             {
-                ExecuteCalcs(tyreRL, RLAverageResult, RLRangeResult, RLModeResult); //Executes calculation for rear left tyre
+                ExecuteCalcs(rearLeftTyre, RLAverageResult, RLRangeResult, RLModeResult); //Executes calculation for rear left tyre
             }
             else
             {
@@ -212,15 +210,13 @@ namespace Degradation_Calculator
             ComboBoxSelectionControl(RearRightBox); //Enables combobox selection as filtered tyres added to combobox
         }
 
-
-
         private void RearRightBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Tyre tyreRR = (Tyre)RearRightBox.SelectedItem; //Casts selected item to tyre type 
+            var rearRightTyre = (Tyre)RearRightBox.SelectedItem; //Casts selected item to tyre type 
 
             if (TrackBox.SelectedItem != null)
             {
-                ExecuteCalcs(tyreRR, RRAverageResult, RRRangeResult, RRModeResult); //Executes calculation for rear right tyre
+                ExecuteCalcs(rearRightTyre, RRAverageResult, RRRangeResult, RRModeResult); //Executes calculation for rear right tyre
             }
             else
             {
@@ -228,13 +224,11 @@ namespace Degradation_Calculator
             }
         }
 
-
-
         private void TrackBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             SelectedTrack = (Track)TrackBox.SelectedItem; //Casts selected item to tyre type 
 
-            DegridationPoints.Clear();
+            TrackDegridationPoints.Clear();
 
             //Converts Track degragation point from string to list<int> to allow for use in formula
             List<string> DegPoints = SelectedTrack.DegragationPoint.Split(',').ToList(); //splits string and stores values in list<string>
@@ -243,7 +237,7 @@ namespace Degradation_Calculator
             {
                 int ConvertedPoint = Convert.ToInt32(D); //Converts string values in list<string> to int
 
-                DegridationPoints.Add(ConvertedPoint); //Adds converted deg point to TrackDegPoints list<int>
+                TrackDegridationPoints.Add(ConvertedPoint); //Adds converted deg point to TrackDegPoints list<int>
             }
 
             GetWeather(SelectedTrack.Location); //Track Temp API call made
@@ -358,7 +352,7 @@ namespace Degradation_Calculator
             }
 
             //Calculates point tyre degregation for all degregation points on a track and adds results to DegResults list
-            foreach (double degPoint in DegridationPoints)
+            foreach (double degPoint in TrackDegridationPoints)
             {
                 int DegResult = Convert.ToInt32((degPoint * TrackTemp) / tyreDegCoe);
                 DegradationResults.Add(DegResult);
