@@ -13,7 +13,7 @@ namespace Degradation_Calculator
 {
     public partial class Form1 : Form
     {
-        private const string OPENWEATHERAPPID = "ea5702b90501aaf5f76e7cd3172089ba";
+        private const string OPENWEATHERAPPID = "";
         List<Tyre> Tyres = new List<Tyre>();
         List<Tyre> FilteredTyreListType = new List<Tyre>();
         List<Track> Tracks = new List<Track>();
@@ -125,6 +125,9 @@ namespace Degradation_Calculator
 
         public void FrontLeftBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (TrackBox.SelectedItem == null)
+                MessageBox.Show("Track Must Be Selected, Please Select a Track", "Track Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Error); //Track selection error message
+
             ValidateTyreSelection();
 
             //clears tyres from list allowing addition of new filtered tyres
@@ -154,16 +157,9 @@ namespace Degradation_Calculator
             {
                 RearLeftBox.Items.Add(tyre); // Addds filtered tyres to combo box (dropdown)
             }
-
-            if (TrackBox.SelectedItem != null)
-            {
-                ExecuteCalcs(frontLeftTyre, FLAvgResult, FLRangeResult, FLModeResult); //Executes calculation for front left tyre
-            }
-            else
-            {
-                MessageBox.Show("Track Must Be Selected, Please Select a Track", "Track Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Error); //Track selection error message
-            }
-
+       
+            ExecuteCalcs(frontLeftTyre, FLAvgResult, FLRangeResult, FLModeResult); //Executes calculation for front left tyre
+           
             //Enables combobox selection as filtered tyres added to combobox 
             ComboBoxSelectionControl(FrontRightBox);
             ComboBoxSelectionControl(RearLeftBox);
@@ -172,56 +168,44 @@ namespace Degradation_Calculator
 
         private void FrontRightBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var frontRightTyre = (Tyre)FrontRightBox.SelectedItem; //Casts selected item to tyre type 
-
-            if (TrackBox.SelectedItem != null)
-            {
-                ExecuteCalcs(frontRightTyre, FRAverageResult, FRRangeResult, FRModeResult); //Executes calculation for front right tyre
-            }
-            else
-            {
+            if (TrackBox.SelectedItem == null)
                 MessageBox.Show("Track Must Be Selected, Please Select a Track", "Track Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Error); //Track selection error message
-            }
+
+            var frontRightTyre = (Tyre)FrontRightBox.SelectedItem; //Casts selected item to tyre type 
+            ExecuteCalcs(frontRightTyre, FRAverageResult, FRRangeResult, FRModeResult); //Executes calculation for front right tyre
+            
         }
 
         private void RearLeftBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var rearLeftTyre = (Tyre)RearLeftBox.SelectedItem; //Casts selected item to tyre type 
+            if (TrackBox.SelectedItem == null)
+                MessageBox.Show("Track Must Be Selected, Please Select a Track", "Track Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Error); //Track selection error message
+
+            var rearLeftTyre = (Tyre)RearLeftBox.SelectedItem; //Casts selected item to tyre type  
 
             //filters list by family, ensuring back tyres are of same family and type
             var rightTyreList = FilteredTyreListType
                 .Where(t => t.Family == rearLeftTyre.Family)
                 .ToList(); 
 
-            foreach (Tyre t in rightTyreList)
+            foreach (Tyre tyre in rightTyreList)
             {
-                RearRightBox.Items.Add(t); // Addds filtered tyres to combo box (dropdown)
+                RearRightBox.Items.Add(tyre); // Addds filtered tyres to combo box (dropdown)
             }
 
-            if (TrackBox.SelectedItem != null)
-            {
-                ExecuteCalcs(rearLeftTyre, RLAverageResult, RLRangeResult, RLModeResult); //Executes calculation for rear left tyre
-            }
-            else
-            {
-                MessageBox.Show("Track Must Be Selected, Please Select a Track", "Track Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Error); //Track selection error message
-            }
-
+            ExecuteCalcs(rearLeftTyre, RLAverageResult, RLRangeResult, RLModeResult); //Executes calculation for rear left tyre
+            
             ComboBoxSelectionControl(RearRightBox); //Enables combobox selection as filtered tyres added to combobox
         }
 
         private void RearRightBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var rearRightTyre = (Tyre)RearRightBox.SelectedItem; //Casts selected item to tyre type 
-
-            if (TrackBox.SelectedItem != null)
-            {
-                ExecuteCalcs(rearRightTyre, RRAverageResult, RRRangeResult, RRModeResult); //Executes calculation for rear right tyre
-            }
-            else
-            {
+            if(TrackBox.SelectedItem == null)
                 MessageBox.Show("Track Must Be Selected, Please Select a Track", "Track Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Error); //Track selection error message
-            }
+
+            var rearRightTyre = (Tyre)RearRightBox.SelectedItem; //Casts selected item to tyre type 
+            ExecuteCalcs(rearRightTyre, RRAverageResult, RRRangeResult, RRModeResult); //Executes calculation for rear right tyre
+           
         }
 
         private void TrackBox_SelectedIndexChanged(object sender, EventArgs e)
