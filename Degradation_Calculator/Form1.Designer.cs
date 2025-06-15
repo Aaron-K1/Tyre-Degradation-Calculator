@@ -88,9 +88,10 @@
             this.FrontLeftBox.BackColor = System.Drawing.Color.White;
             this.FrontLeftBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FrontLeftBox.FormattingEnabled = true;
-            this.FrontLeftBox.Location = new System.Drawing.Point(229, 67);
+            this.FrontLeftBox.Location = new System.Drawing.Point(179, 127);
+            this.FrontLeftBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.FrontLeftBox.Name = "FrontLeftBox";
-            this.FrontLeftBox.Size = new System.Drawing.Size(258, 33);
+            this.FrontLeftBox.Size = new System.Drawing.Size(194, 28);
             this.FrontLeftBox.TabIndex = 0;
             this.FrontLeftBox.Text = "Select Tyre...";
             this.FrontLeftBox.SelectedIndexChanged += new System.EventHandler(this.FrontLeftBox_SelectedIndexChanged);
@@ -102,9 +103,10 @@
             this.FrontRightBox.BackColor = System.Drawing.Color.White;
             this.FrontRightBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FrontRightBox.FormattingEnabled = true;
-            this.FrontRightBox.Location = new System.Drawing.Point(795, 66);
+            this.FrontRightBox.Location = new System.Drawing.Point(603, 127);
+            this.FrontRightBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.FrontRightBox.Name = "FrontRightBox";
-            this.FrontRightBox.Size = new System.Drawing.Size(258, 33);
+            this.FrontRightBox.Size = new System.Drawing.Size(194, 28);
             this.FrontRightBox.TabIndex = 1;
             this.FrontRightBox.Text = "Select Tyre...";
             this.FrontRightBox.SelectedIndexChanged += new System.EventHandler(this.FrontRightBox_SelectedIndexChanged);
@@ -117,9 +119,10 @@
             this.RearLeftBox.BackColor = System.Drawing.Color.White;
             this.RearLeftBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RearLeftBox.FormattingEnabled = true;
-            this.RearLeftBox.Location = new System.Drawing.Point(229, 147);
+            this.RearLeftBox.Location = new System.Drawing.Point(179, 192);
+            this.RearLeftBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.RearLeftBox.Name = "RearLeftBox";
-            this.RearLeftBox.Size = new System.Drawing.Size(258, 33);
+            this.RearLeftBox.Size = new System.Drawing.Size(194, 28);
             this.RearLeftBox.TabIndex = 2;
             this.RearLeftBox.Text = "Select Tyre...";
             this.RearLeftBox.SelectedIndexChanged += new System.EventHandler(this.RearLeftBox_SelectedIndexChanged);
@@ -132,9 +135,10 @@
             this.TrackBox.BackColor = System.Drawing.Color.White;
             this.TrackBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TrackBox.FormattingEnabled = true;
-            this.TrackBox.Location = new System.Drawing.Point(229, 219);
+            this.TrackBox.Location = new System.Drawing.Point(179, 69);
+            this.TrackBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TrackBox.Name = "TrackBox";
-            this.TrackBox.Size = new System.Drawing.Size(258, 33);
+            this.TrackBox.Size = new System.Drawing.Size(194, 28);
             this.TrackBox.TabIndex = 3;
             this.TrackBox.Text = "Select Track...";
             this.TrackBox.SelectedIndexChanged += new System.EventHandler(this.TrackBox_SelectedIndexChanged);
@@ -146,9 +150,10 @@
             this.RearRightBox.BackColor = System.Drawing.Color.White;
             this.RearRightBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RearRightBox.FormattingEnabled = true;
-            this.RearRightBox.Location = new System.Drawing.Point(795, 147);
+            this.RearRightBox.Location = new System.Drawing.Point(603, 192);
+            this.RearRightBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.RearRightBox.Name = "RearRightBox";
-            this.RearRightBox.Size = new System.Drawing.Size(258, 33);
+            this.RearRightBox.Size = new System.Drawing.Size(194, 28);
             this.RearRightBox.TabIndex = 4;
             this.RearRightBox.Text = "Select Tyre...";
             this.RearRightBox.SelectedIndexChanged += new System.EventHandler(this.RearRightBox_SelectedIndexChanged);
@@ -157,9 +162,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(500, 22);
+            this.label1.Location = new System.Drawing.Point(375, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 32);
+            this.label1.Size = new System.Drawing.Size(123, 26);
             this.label1.TabIndex = 5;
             this.label1.Text = "Selections";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -169,9 +175,10 @@
             this.TempLbl.AutoSize = true;
             this.TempLbl.BackColor = System.Drawing.SystemColors.Control;
             this.TempLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TempLbl.Location = new System.Drawing.Point(661, 227);
+            this.TempLbl.Location = new System.Drawing.Point(502, 69);
+            this.TempLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TempLbl.Name = "TempLbl";
-            this.TempLbl.Size = new System.Drawing.Size(171, 25);
+            this.TempLbl.Size = new System.Drawing.Size(135, 20);
             this.TempLbl.TabIndex = 6;
             this.TempLbl.Text = "Temperature (ºC):";
             // 
@@ -179,9 +186,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(526, 302);
+            this.label2.Location = new System.Drawing.Point(394, 245);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 32);
+            this.label2.Size = new System.Drawing.Size(92, 26);
             this.label2.TabIndex = 7;
             this.label2.Text = "Results";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -190,9 +198,10 @@
             // 
             this.frontLeftLbl.AutoSize = true;
             this.frontLeftLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.frontLeftLbl.Location = new System.Drawing.Point(120, 13);
+            this.frontLeftLbl.Location = new System.Drawing.Point(90, 11);
+            this.frontLeftLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.frontLeftLbl.Name = "frontLeftLbl";
-            this.frontLeftLbl.Size = new System.Drawing.Size(104, 25);
+            this.frontLeftLbl.Size = new System.Drawing.Size(89, 20);
             this.frontLeftLbl.TabIndex = 8;
             this.frontLeftLbl.Text = "Front Left";
             this.frontLeftLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -201,9 +210,10 @@
             // 
             this.FLAverage.AutoSize = true;
             this.FLAverage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FLAverage.Location = new System.Drawing.Point(31, 70);
+            this.FLAverage.Location = new System.Drawing.Point(23, 57);
+            this.FLAverage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FLAverage.Name = "FLAverage";
-            this.FLAverage.Size = new System.Drawing.Size(92, 25);
+            this.FLAverage.Size = new System.Drawing.Size(72, 20);
             this.FLAverage.TabIndex = 9;
             this.FLAverage.Text = "Average:";
             this.FLAverage.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -213,9 +223,10 @@
             this.FLAvgResult.BackColor = System.Drawing.Color.White;
             this.FLAvgResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.FLAvgResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FLAvgResult.Location = new System.Drawing.Point(146, 70);
+            this.FLAvgResult.Location = new System.Drawing.Point(110, 57);
+            this.FLAvgResult.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FLAvgResult.Name = "FLAvgResult";
-            this.FLAvgResult.Size = new System.Drawing.Size(104, 25);
+            this.FLAvgResult.Size = new System.Drawing.Size(78, 21);
             this.FLAvgResult.TabIndex = 10;
             this.FLAvgResult.Text = "Average";
             this.FLAvgResult.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -225,9 +236,10 @@
             this.FLModeResult.BackColor = System.Drawing.Color.White;
             this.FLModeResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.FLModeResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FLModeResult.Location = new System.Drawing.Point(146, 114);
+            this.FLModeResult.Location = new System.Drawing.Point(110, 93);
+            this.FLModeResult.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FLModeResult.Name = "FLModeResult";
-            this.FLModeResult.Size = new System.Drawing.Size(104, 25);
+            this.FLModeResult.Size = new System.Drawing.Size(78, 21);
             this.FLModeResult.TabIndex = 12;
             this.FLModeResult.Text = "Mode";
             this.FLModeResult.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -236,9 +248,10 @@
             // 
             this.FLMode.AutoSize = true;
             this.FLMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FLMode.Location = new System.Drawing.Point(31, 114);
+            this.FLMode.Location = new System.Drawing.Point(23, 93);
+            this.FLMode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FLMode.Name = "FLMode";
-            this.FLMode.Size = new System.Drawing.Size(68, 25);
+            this.FLMode.Size = new System.Drawing.Size(53, 20);
             this.FLMode.TabIndex = 11;
             this.FLMode.Text = "Mode:";
             this.FLMode.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -248,9 +261,10 @@
             this.FLRangeResult.BackColor = System.Drawing.Color.White;
             this.FLRangeResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.FLRangeResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FLRangeResult.Location = new System.Drawing.Point(146, 160);
+            this.FLRangeResult.Location = new System.Drawing.Point(110, 130);
+            this.FLRangeResult.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FLRangeResult.Name = "FLRangeResult";
-            this.FLRangeResult.Size = new System.Drawing.Size(104, 25);
+            this.FLRangeResult.Size = new System.Drawing.Size(78, 21);
             this.FLRangeResult.TabIndex = 14;
             this.FLRangeResult.Text = "Range";
             this.FLRangeResult.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -259,9 +273,10 @@
             // 
             this.FLRange.AutoSize = true;
             this.FLRange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FLRange.Location = new System.Drawing.Point(31, 160);
+            this.FLRange.Location = new System.Drawing.Point(23, 130);
+            this.FLRange.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FLRange.Name = "FLRange";
-            this.FLRange.Size = new System.Drawing.Size(75, 25);
+            this.FLRange.Size = new System.Drawing.Size(61, 20);
             this.FLRange.TabIndex = 13;
             this.FLRange.Text = "Range:";
             this.FLRange.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -271,9 +286,10 @@
             this.FRRangeResult.BackColor = System.Drawing.Color.White;
             this.FRRangeResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.FRRangeResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FRRangeResult.Location = new System.Drawing.Point(167, 159);
+            this.FRRangeResult.Location = new System.Drawing.Point(125, 129);
+            this.FRRangeResult.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FRRangeResult.Name = "FRRangeResult";
-            this.FRRangeResult.Size = new System.Drawing.Size(117, 25);
+            this.FRRangeResult.Size = new System.Drawing.Size(88, 21);
             this.FRRangeResult.TabIndex = 21;
             this.FRRangeResult.Text = "Range";
             this.FRRangeResult.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -282,9 +298,10 @@
             // 
             this.FRRange.AutoSize = true;
             this.FRRange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FRRange.Location = new System.Drawing.Point(52, 159);
+            this.FRRange.Location = new System.Drawing.Point(39, 129);
+            this.FRRange.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FRRange.Name = "FRRange";
-            this.FRRange.Size = new System.Drawing.Size(75, 25);
+            this.FRRange.Size = new System.Drawing.Size(61, 20);
             this.FRRange.TabIndex = 20;
             this.FRRange.Text = "Range:";
             this.FRRange.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -294,9 +311,10 @@
             this.FRModeResult.BackColor = System.Drawing.Color.White;
             this.FRModeResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.FRModeResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FRModeResult.Location = new System.Drawing.Point(167, 117);
+            this.FRModeResult.Location = new System.Drawing.Point(125, 95);
+            this.FRModeResult.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FRModeResult.Name = "FRModeResult";
-            this.FRModeResult.Size = new System.Drawing.Size(117, 25);
+            this.FRModeResult.Size = new System.Drawing.Size(88, 21);
             this.FRModeResult.TabIndex = 19;
             this.FRModeResult.Text = "Mode";
             this.FRModeResult.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -305,9 +323,10 @@
             // 
             this.FRMode.AutoSize = true;
             this.FRMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FRMode.Location = new System.Drawing.Point(52, 113);
+            this.FRMode.Location = new System.Drawing.Point(39, 92);
+            this.FRMode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FRMode.Name = "FRMode";
-            this.FRMode.Size = new System.Drawing.Size(68, 25);
+            this.FRMode.Size = new System.Drawing.Size(53, 20);
             this.FRMode.TabIndex = 18;
             this.FRMode.Text = "Mode:";
             this.FRMode.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -317,9 +336,10 @@
             this.FRAverageResult.BackColor = System.Drawing.Color.White;
             this.FRAverageResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.FRAverageResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FRAverageResult.Location = new System.Drawing.Point(167, 69);
+            this.FRAverageResult.Location = new System.Drawing.Point(125, 56);
+            this.FRAverageResult.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FRAverageResult.Name = "FRAverageResult";
-            this.FRAverageResult.Size = new System.Drawing.Size(117, 25);
+            this.FRAverageResult.Size = new System.Drawing.Size(88, 21);
             this.FRAverageResult.TabIndex = 17;
             this.FRAverageResult.Text = "Average";
             this.FRAverageResult.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -328,9 +348,10 @@
             // 
             this.FRAverage.AutoSize = true;
             this.FRAverage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FRAverage.Location = new System.Drawing.Point(52, 69);
+            this.FRAverage.Location = new System.Drawing.Point(39, 56);
+            this.FRAverage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FRAverage.Name = "FRAverage";
-            this.FRAverage.Size = new System.Drawing.Size(92, 25);
+            this.FRAverage.Size = new System.Drawing.Size(72, 20);
             this.FRAverage.TabIndex = 16;
             this.FRAverage.Text = "Average:";
             this.FRAverage.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -339,9 +360,10 @@
             // 
             this.FrontRightLbl.AutoSize = true;
             this.FrontRightLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FrontRightLbl.Location = new System.Drawing.Point(127, 13);
+            this.FrontRightLbl.Location = new System.Drawing.Point(95, 11);
+            this.FrontRightLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FrontRightLbl.Name = "FrontRightLbl";
-            this.FrontRightLbl.Size = new System.Drawing.Size(117, 25);
+            this.FrontRightLbl.Size = new System.Drawing.Size(100, 20);
             this.FrontRightLbl.TabIndex = 15;
             this.FrontRightLbl.Text = "Front Right";
             this.FrontRightLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -351,9 +373,10 @@
             this.RLRangeResult.BackColor = System.Drawing.Color.White;
             this.RLRangeResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.RLRangeResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RLRangeResult.Location = new System.Drawing.Point(146, 145);
+            this.RLRangeResult.Location = new System.Drawing.Point(110, 118);
+            this.RLRangeResult.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RLRangeResult.Name = "RLRangeResult";
-            this.RLRangeResult.Size = new System.Drawing.Size(104, 25);
+            this.RLRangeResult.Size = new System.Drawing.Size(78, 21);
             this.RLRangeResult.TabIndex = 28;
             this.RLRangeResult.Text = "Range";
             this.RLRangeResult.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -362,9 +385,10 @@
             // 
             this.RLRange.AutoSize = true;
             this.RLRange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RLRange.Location = new System.Drawing.Point(31, 145);
+            this.RLRange.Location = new System.Drawing.Point(23, 118);
+            this.RLRange.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RLRange.Name = "RLRange";
-            this.RLRange.Size = new System.Drawing.Size(75, 25);
+            this.RLRange.Size = new System.Drawing.Size(61, 20);
             this.RLRange.TabIndex = 27;
             this.RLRange.Text = "Range:";
             this.RLRange.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -374,9 +398,10 @@
             this.RLModeResult.BackColor = System.Drawing.Color.White;
             this.RLModeResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.RLModeResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RLModeResult.Location = new System.Drawing.Point(146, 99);
+            this.RLModeResult.Location = new System.Drawing.Point(110, 80);
+            this.RLModeResult.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RLModeResult.Name = "RLModeResult";
-            this.RLModeResult.Size = new System.Drawing.Size(104, 25);
+            this.RLModeResult.Size = new System.Drawing.Size(78, 21);
             this.RLModeResult.TabIndex = 26;
             this.RLModeResult.Text = "Mode";
             this.RLModeResult.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -385,9 +410,10 @@
             // 
             this.RLMode.AutoSize = true;
             this.RLMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RLMode.Location = new System.Drawing.Point(31, 99);
+            this.RLMode.Location = new System.Drawing.Point(23, 80);
+            this.RLMode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RLMode.Name = "RLMode";
-            this.RLMode.Size = new System.Drawing.Size(68, 25);
+            this.RLMode.Size = new System.Drawing.Size(53, 20);
             this.RLMode.TabIndex = 25;
             this.RLMode.Text = "Mode:";
             this.RLMode.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -397,9 +423,10 @@
             this.RLAverageResult.BackColor = System.Drawing.Color.White;
             this.RLAverageResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.RLAverageResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RLAverageResult.Location = new System.Drawing.Point(146, 55);
+            this.RLAverageResult.Location = new System.Drawing.Point(110, 45);
+            this.RLAverageResult.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RLAverageResult.Name = "RLAverageResult";
-            this.RLAverageResult.Size = new System.Drawing.Size(104, 25);
+            this.RLAverageResult.Size = new System.Drawing.Size(78, 21);
             this.RLAverageResult.TabIndex = 24;
             this.RLAverageResult.Text = "Average";
             this.RLAverageResult.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -408,9 +435,10 @@
             // 
             this.RLAverage.AutoSize = true;
             this.RLAverage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RLAverage.Location = new System.Drawing.Point(31, 55);
+            this.RLAverage.Location = new System.Drawing.Point(23, 45);
+            this.RLAverage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RLAverage.Name = "RLAverage";
-            this.RLAverage.Size = new System.Drawing.Size(92, 25);
+            this.RLAverage.Size = new System.Drawing.Size(72, 20);
             this.RLAverage.TabIndex = 23;
             this.RLAverage.Text = "Average:";
             this.RLAverage.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -419,9 +447,10 @@
             // 
             this.RearLeftLbl.AutoSize = true;
             this.RearLeftLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RearLeftLbl.Location = new System.Drawing.Point(125, 11);
+            this.RearLeftLbl.Location = new System.Drawing.Point(94, 9);
+            this.RearLeftLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RearLeftLbl.Name = "RearLeftLbl";
-            this.RearLeftLbl.Size = new System.Drawing.Size(99, 25);
+            this.RearLeftLbl.Size = new System.Drawing.Size(85, 20);
             this.RearLeftLbl.TabIndex = 22;
             this.RearLeftLbl.Text = "Rear Left";
             this.RearLeftLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -431,9 +460,10 @@
             this.RRRangeResult.BackColor = System.Drawing.Color.White;
             this.RRRangeResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.RRRangeResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RRRangeResult.Location = new System.Drawing.Point(167, 145);
+            this.RRRangeResult.Location = new System.Drawing.Point(125, 118);
+            this.RRRangeResult.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RRRangeResult.Name = "RRRangeResult";
-            this.RRRangeResult.Size = new System.Drawing.Size(117, 25);
+            this.RRRangeResult.Size = new System.Drawing.Size(88, 21);
             this.RRRangeResult.TabIndex = 35;
             this.RRRangeResult.Text = "Range";
             this.RRRangeResult.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -442,9 +472,10 @@
             // 
             this.RRRange.AutoSize = true;
             this.RRRange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RRRange.Location = new System.Drawing.Point(52, 145);
+            this.RRRange.Location = new System.Drawing.Point(39, 118);
+            this.RRRange.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RRRange.Name = "RRRange";
-            this.RRRange.Size = new System.Drawing.Size(75, 25);
+            this.RRRange.Size = new System.Drawing.Size(61, 20);
             this.RRRange.TabIndex = 34;
             this.RRRange.Text = "Range:";
             this.RRRange.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -454,9 +485,10 @@
             this.RRModeResult.BackColor = System.Drawing.Color.White;
             this.RRModeResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.RRModeResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RRModeResult.Location = new System.Drawing.Point(167, 99);
+            this.RRModeResult.Location = new System.Drawing.Point(125, 80);
+            this.RRModeResult.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RRModeResult.Name = "RRModeResult";
-            this.RRModeResult.Size = new System.Drawing.Size(117, 25);
+            this.RRModeResult.Size = new System.Drawing.Size(88, 21);
             this.RRModeResult.TabIndex = 33;
             this.RRModeResult.Text = "Mode";
             this.RRModeResult.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -465,9 +497,10 @@
             // 
             this.RRMode.AutoSize = true;
             this.RRMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RRMode.Location = new System.Drawing.Point(52, 99);
+            this.RRMode.Location = new System.Drawing.Point(39, 80);
+            this.RRMode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RRMode.Name = "RRMode";
-            this.RRMode.Size = new System.Drawing.Size(68, 25);
+            this.RRMode.Size = new System.Drawing.Size(53, 20);
             this.RRMode.TabIndex = 32;
             this.RRMode.Text = "Mode:";
             this.RRMode.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -477,9 +510,10 @@
             this.RRAverageResult.BackColor = System.Drawing.Color.White;
             this.RRAverageResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.RRAverageResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RRAverageResult.Location = new System.Drawing.Point(167, 55);
+            this.RRAverageResult.Location = new System.Drawing.Point(125, 45);
+            this.RRAverageResult.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RRAverageResult.Name = "RRAverageResult";
-            this.RRAverageResult.Size = new System.Drawing.Size(117, 25);
+            this.RRAverageResult.Size = new System.Drawing.Size(88, 21);
             this.RRAverageResult.TabIndex = 31;
             this.RRAverageResult.Text = "Average";
             this.RRAverageResult.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -488,9 +522,10 @@
             // 
             this.RRAverage.AutoSize = true;
             this.RRAverage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RRAverage.Location = new System.Drawing.Point(52, 55);
+            this.RRAverage.Location = new System.Drawing.Point(39, 45);
+            this.RRAverage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RRAverage.Name = "RRAverage";
-            this.RRAverage.Size = new System.Drawing.Size(92, 25);
+            this.RRAverage.Size = new System.Drawing.Size(72, 20);
             this.RRAverage.TabIndex = 30;
             this.RRAverage.Text = "Average:";
             this.RRAverage.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -499,9 +534,10 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(127, 11);
+            this.label9.Location = new System.Drawing.Point(95, 9);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(112, 25);
+            this.label9.Size = new System.Drawing.Size(96, 20);
             this.label9.TabIndex = 29;
             this.label9.Text = "Rear Right";
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -517,9 +553,10 @@
             this.FLPanel.Controls.Add(this.FLAvgResult);
             this.FLPanel.Controls.Add(this.FLAverage);
             this.FLPanel.Controls.Add(this.frontLeftLbl);
-            this.FLPanel.Location = new System.Drawing.Point(112, 339);
+            this.FLPanel.Location = new System.Drawing.Point(84, 275);
+            this.FLPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.FLPanel.Name = "FLPanel";
-            this.FLPanel.Size = new System.Drawing.Size(363, 216);
+            this.FLPanel.Size = new System.Drawing.Size(273, 176);
             this.FLPanel.TabIndex = 36;
             // 
             // panel1
@@ -533,9 +570,10 @@
             this.panel1.Controls.Add(this.FRAverageResult);
             this.panel1.Controls.Add(this.FRAverage);
             this.panel1.Controls.Add(this.FrontRightLbl);
-            this.panel1.Location = new System.Drawing.Point(680, 339);
+            this.panel1.Location = new System.Drawing.Point(510, 275);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(361, 216);
+            this.panel1.Size = new System.Drawing.Size(271, 176);
             this.panel1.TabIndex = 37;
             // 
             // panel2
@@ -549,9 +587,10 @@
             this.panel2.Controls.Add(this.RLAverageResult);
             this.panel2.Controls.Add(this.RLAverage);
             this.panel2.Controls.Add(this.RearLeftLbl);
-            this.panel2.Location = new System.Drawing.Point(112, 627);
+            this.panel2.Location = new System.Drawing.Point(84, 509);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(364, 198);
+            this.panel2.Size = new System.Drawing.Size(274, 161);
             this.panel2.TabIndex = 38;
             // 
             // panel3
@@ -565,17 +604,19 @@
             this.panel3.Controls.Add(this.RRAverageResult);
             this.panel3.Controls.Add(this.RRAverage);
             this.panel3.Controls.Add(this.label9);
-            this.panel3.Location = new System.Drawing.Point(680, 627);
+            this.panel3.Location = new System.Drawing.Point(510, 509);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(361, 198);
+            this.panel3.Size = new System.Drawing.Size(271, 161);
             this.panel3.TabIndex = 39;
             // 
             // TempTBox
             // 
             this.TempTBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TempTBox.Location = new System.Drawing.Point(848, 224);
+            this.TempTBox.Location = new System.Drawing.Point(642, 67);
+            this.TempTBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TempTBox.Name = "TempTBox";
-            this.TempTBox.Size = new System.Drawing.Size(205, 30);
+            this.TempTBox.Size = new System.Drawing.Size(155, 26);
             this.TempTBox.TabIndex = 40;
             this.TempTBox.TextChanged += new System.EventHandler(this.TempTBox_TextChanged);
             // 
@@ -584,9 +625,10 @@
             this.FLlbl.AutoSize = true;
             this.FLlbl.BackColor = System.Drawing.SystemColors.Control;
             this.FLlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FLlbl.Location = new System.Drawing.Point(107, 75);
+            this.FLlbl.Location = new System.Drawing.Point(87, 134);
+            this.FLlbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FLlbl.Name = "FLlbl";
-            this.FLlbl.Size = new System.Drawing.Size(105, 25);
+            this.FLlbl.Size = new System.Drawing.Size(87, 20);
             this.FLlbl.TabIndex = 41;
             this.FLlbl.Text = "Front Left: ";
             // 
@@ -595,9 +637,10 @@
             this.RLlbl.AutoSize = true;
             this.RLlbl.BackColor = System.Drawing.SystemColors.Control;
             this.RLlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RLlbl.Location = new System.Drawing.Point(107, 155);
+            this.RLlbl.Location = new System.Drawing.Point(87, 199);
+            this.RLlbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RLlbl.Name = "RLlbl";
-            this.RLlbl.Size = new System.Drawing.Size(101, 25);
+            this.RLlbl.Size = new System.Drawing.Size(84, 20);
             this.RLlbl.TabIndex = 42;
             this.RLlbl.Text = "Rear Left: ";
             // 
@@ -606,9 +649,10 @@
             this.Tracklbl.AutoSize = true;
             this.Tracklbl.BackColor = System.Drawing.SystemColors.Control;
             this.Tracklbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tracklbl.Location = new System.Drawing.Point(140, 227);
+            this.Tracklbl.Location = new System.Drawing.Point(112, 75);
+            this.Tracklbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Tracklbl.Name = "Tracklbl";
-            this.Tracklbl.Size = new System.Drawing.Size(68, 25);
+            this.Tracklbl.Size = new System.Drawing.Size(52, 20);
             this.Tracklbl.TabIndex = 43;
             this.Tracklbl.Text = "Track:";
             // 
@@ -617,9 +661,10 @@
             this.RRlbl.AutoSize = true;
             this.RRlbl.BackColor = System.Drawing.SystemColors.Control;
             this.RRlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RRlbl.Location = new System.Drawing.Point(661, 155);
+            this.RRlbl.Location = new System.Drawing.Point(503, 199);
+            this.RRlbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RRlbl.Name = "RRlbl";
-            this.RRlbl.Size = new System.Drawing.Size(113, 25);
+            this.RRlbl.Size = new System.Drawing.Size(94, 20);
             this.RRlbl.TabIndex = 45;
             this.RRlbl.Text = "Rear Right: ";
             // 
@@ -628,17 +673,18 @@
             this.FRlbl.AutoSize = true;
             this.FRlbl.BackColor = System.Drawing.SystemColors.Control;
             this.FRlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FRlbl.Location = new System.Drawing.Point(661, 74);
+            this.FRlbl.Location = new System.Drawing.Point(503, 133);
+            this.FRlbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FRlbl.Name = "FRlbl";
-            this.FRlbl.Size = new System.Drawing.Size(117, 25);
+            this.FRlbl.Size = new System.Drawing.Size(97, 20);
             this.FRlbl.TabIndex = 44;
             this.FRlbl.Text = "Front Right: ";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1188, 1047);
+            this.ClientSize = new System.Drawing.Size(891, 851);
             this.Controls.Add(this.RRlbl);
             this.Controls.Add(this.FRlbl);
             this.Controls.Add(this.Tracklbl);
@@ -657,6 +703,7 @@
             this.Controls.Add(this.RearLeftBox);
             this.Controls.Add(this.FrontRightBox);
             this.Controls.Add(this.FrontLeftBox);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.FLPanel.ResumeLayout(false);
