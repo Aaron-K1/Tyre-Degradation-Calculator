@@ -13,7 +13,7 @@ namespace Degradation_Calculator
 {
     public partial class Form1 : Form
     {
-        private const string OPENWEATHERAPPID = "";
+        private const string OPENWEATHERAPPID = "ea5702b90501aaf5f76e7cd3172089ba\r\n";
         List<Tyre> Tyres = new List<Tyre>();
         List<Tyre> FilteredTyreListType = new List<Tyre>();
         List<Track> Tracks = new List<Track>();
@@ -27,8 +27,8 @@ namespace Degradation_Calculator
         public Form1()
         {
             InitializeComponent();
-            LoadTyre();
-            LoadTrack();
+            LoadTyres();
+            LoadTracks();
             ClearResultText();
 
             //Enables or disables combobox selection if no values present in list
@@ -49,22 +49,20 @@ namespace Degradation_Calculator
             }
         }
 
-
-
         //Loads tyres into application
-        public void LoadTyre()
+        public void LoadTyres()
         {
             var tyreXMLFile = FileLoader.LoadXml("TyresXML.xml"); // Loads XML File
 
             foreach (XmlNode node in tyreXMLFile.DocumentElement) //ForEach XML element in document
             {
-                string name = node["Name"].InnerText; //Collects and stores tyre name 
-                string family = node["Family"].InnerText; //Collects and stores tyre family
-                string type = node["Type"].InnerText; //Collects and stores tyre type
-                string placement = node["Placement"].Value; //Collects and stores tyre placement
-                double degradationcoefficient = double.Parse(node["DegradationCoefficient"].InnerText); //Collects and stores tyre Degradation Coefficient
+                var name = node["Name"].InnerText;
+                var family = node["Family"].InnerText;
+                var type = node["Type"].InnerText;
+                var placement = node["Placement"].Value;
+                var degradationcoefficient = double.Parse(node["DegradationCoefficient"].InnerText);
 
-                var tyre = new Tyre(name, family, type, placement, degradationcoefficient); //Creats new tyre object
+                var tyre = new Tyre(name, family, type, placement, degradationcoefficient);
 
                 Tyres.Add(tyre); //Adds the new tyre object to tyre list
 
@@ -106,7 +104,7 @@ namespace Degradation_Calculator
         }
 
         //Loads Tracks into application
-        public void LoadTrack()
+        public void LoadTracks()
         {
             var lines = FileLoader.LoadText("TrackDegradationCoefficients.txt").Split('\n').ToList();
 
