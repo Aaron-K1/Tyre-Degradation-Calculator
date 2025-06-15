@@ -41,11 +41,6 @@ namespace Degradation_Calculator
                 FrontLeftBox.Enabled = false;
                 TempTBox.Enabled = false;
             }
-            else
-            {
-                FrontLeftBox.Enabled = true;
-                TempTBox.Enabled = true;
-            }
         }
 
         //Loads tyres into application
@@ -72,26 +67,21 @@ namespace Degradation_Calculator
         //Controls the selection of combo boxes/ drop down lists ensuring they are only selectable when values are avaliable (user flow control)
         public void ComboBoxSelectionControl(ComboBox box)
         {
-            if (box.Items.Count == 0)
-            {
-                box.Enabled = false;
-            }
-            else
-            {
-                box.Enabled = true;
-            }
+            box.Enabled = box.Items.Count > 0;
         }
 
         //Loads Tracks into application
         public void LoadTracks()
         {
             var lines = FileLoader.LoadText("TrackDegradationCoefficients.txt").Split('\n').ToList();
+            if(!lines.Any())
+                MessageBox.Show("No Track Information Found", "Track Retrieval Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             foreach (var line in lines)
             {
-                var tracks = line.Split('|').ToList();
+                var trackData = line.Split('|').ToList();
 
-                var track = new Track(tracks[0], tracks[1], tracks[2]);
+                var track = new Track(trackData[0], trackData[1], trackData[2]);
 
                 Tracks.Add(track);
 

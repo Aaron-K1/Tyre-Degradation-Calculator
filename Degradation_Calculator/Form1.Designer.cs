@@ -659,7 +659,7 @@
             FRlbl.Size = new System.Drawing.Size(97, 20);
             FRlbl.TabIndex = 44;
             FRlbl.Text = "Front Right: ";
-            // 
+            //          
             // Form1
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
