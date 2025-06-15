@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Degradation_Calculator
+﻿namespace Degradation_Calculator
 {
     //This comment is a test commit
     public class Track
     {
-        public string Name { get; private set; }
-        public string Location { get; private set; }
-        public string DegragationPoint { get; private set; }
-
         public Track(string name, string location, string degragationpoint) //Track Constructor 
         {
             Name = name;
@@ -20,6 +10,10 @@ namespace Degradation_Calculator
             DegragationPoint = degragationpoint;
 
         }
+
+        public string Name { get; private set; }
+        public string Location { get; private set; }
+        public string DegragationPoint { get; private set; }
 
         public override string ToString()
         {

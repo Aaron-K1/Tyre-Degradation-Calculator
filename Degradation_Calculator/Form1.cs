@@ -1,5 +1,5 @@
-﻿using Newtonsoft.Json;
-using Degradation_Calculator.Types.OpenWeather;
+﻿using Degradation_Calculator.Types.OpenWeather;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,13 +8,12 @@ using System.Linq;
 using System.Net;
 using System.Windows.Forms;
 using System.Xml;
-using System.IO;
 
 namespace Degradation_Calculator
 {
     public partial class Form1 : Form
     {
-        private const string OPENWEATHERAPPID = "";
+        private const string OPENWEATHERAPPID = "ea5702b90501aaf5f76e7cd3172089ba";
         List<Tyre> TyreList = new List<Tyre>();
         List<Tyre> FilteredTyreListType = new List<Tyre>();
         List<Track> TrackList = new List<Track>();
