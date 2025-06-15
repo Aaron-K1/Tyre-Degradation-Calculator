@@ -13,7 +13,7 @@ namespace Degradation_Calculator
 {
     public partial class Form1 : Form
     {
-        private const string OPENWEATHERAPPID = "ea5702b90501aaf5f76e7cd3172089ba\r\n";
+        private const string OPENWEATHERAPPID = "";
         List<Tyre> Tyres = new List<Tyre>();
         List<Tyre> FilteredTyreListType = new List<Tyre>();
         List<Track> Tracks = new List<Track>();
