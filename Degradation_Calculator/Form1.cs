@@ -13,7 +13,7 @@ namespace Degradation_Calculator
 {
     public partial class Form1 : Form
     {
-        private const string OPENWEATHERAPPID = "";
+        private const string OPENWEATHERAPPID = "ea5702b90501aaf5f76e7cd3172089ba";
         List<Tyre> Tyres = new List<Tyre>();
         List<Tyre> FilteredTyreListType = new List<Tyre>();
         List<Track> Tracks = new List<Track>();
@@ -29,7 +29,6 @@ namespace Degradation_Calculator
             InitializeComponent();
             LoadTyres();
             LoadTracks();
-            ClearResultText();
 
             //Enables or disables combobox selection if no values present in list
             ComboBoxSelectionControl(FrontLeftBox);
@@ -68,26 +67,6 @@ namespace Degradation_Calculator
 
                 FrontLeftBox.Items.Add(tyre); //Adds the new tyre object to combo box
             }
-        }
-
-        //Clears result label text
-        public void ClearResultText()
-        {
-            FLAvgResult.Text = "";
-            FLModeResult.Text = "";
-            FLRangeResult.Text = "";
-
-            FRAverageResult.Text = "";
-            FRModeResult.Text = "";
-            FRRangeResult.Text = "";
-
-            RLAverageResult.Text = "";
-            RLModeResult.Text = "";
-            RLRangeResult.Text = "";
-
-            RRAverageResult.Text = "";
-            RRModeResult.Text = "";
-            RRRangeResult.Text = "";
         }
 
         //Controls the selection of combo boxes/ drop down lists ensuring they are only selectable when values are avaliable (user flow control)
@@ -143,8 +122,7 @@ namespace Degradation_Calculator
             // Filters tyre listby family, ensures front tyres are of same family and type
             var filteredTyreListFamily = FilteredTyreListType
                 .Where(t => t.Family == frontLeftTyre.Family)
-                .ToList(); 
-
+                .ToList();
 
             foreach (Tyre tyre in filteredTyreListFamily)
             {
@@ -155,13 +133,12 @@ namespace Degradation_Calculator
             {
                 RearLeftBox.Items.Add(tyre); // Addds filtered tyres to combo box (dropdown)
             }
-       
+
             ExecuteCalcs(frontLeftTyre, FLAvgResult, FLRangeResult, FLModeResult); //Executes calculation for front left tyre
-           
+
             //Enables combobox selection as filtered tyres added to combobox 
             ComboBoxSelectionControl(FrontRightBox);
             ComboBoxSelectionControl(RearLeftBox);
-
         }
 
         private void FrontRightBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -171,7 +148,6 @@ namespace Degradation_Calculator
 
             var frontRightTyre = (Tyre)FrontRightBox.SelectedItem; //Casts selected item to tyre type 
             ExecuteCalcs(frontRightTyre, FRAverageResult, FRRangeResult, FRModeResult); //Executes calculation for front right tyre
-            
         }
 
         private void RearLeftBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -184,7 +160,7 @@ namespace Degradation_Calculator
             //filters list by family, ensuring back tyres are of same family and type
             var rightTyreList = FilteredTyreListType
                 .Where(t => t.Family == rearLeftTyre.Family)
-                .ToList(); 
+                .ToList();
 
             foreach (Tyre tyre in rightTyreList)
             {
@@ -192,18 +168,17 @@ namespace Degradation_Calculator
             }
 
             ExecuteCalcs(rearLeftTyre, RLAverageResult, RLRangeResult, RLModeResult); //Executes calculation for rear left tyre
-            
+
             ComboBoxSelectionControl(RearRightBox); //Enables combobox selection as filtered tyres added to combobox
         }
 
         private void RearRightBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(TrackBox.SelectedItem == null)
+            if (TrackBox.SelectedItem == null)
                 MessageBox.Show("Track Must Be Selected, Please Select a Track", "Track Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Error); //Track selection error message
 
             var rearRightTyre = (Tyre)RearRightBox.SelectedItem; //Casts selected item to tyre type 
             ExecuteCalcs(rearRightTyre, RRAverageResult, RRRangeResult, RRModeResult); //Executes calculation for rear right tyre
-           
         }
 
         private void TrackBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -476,7 +451,6 @@ namespace Degradation_Calculator
                     RRRangeResult.BackColor = Color.White;
                 }
             }
-
         }
     }
 }
